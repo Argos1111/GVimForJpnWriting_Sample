@@ -1,0 +1,1 @@
+# GVimForJpnWriting_Sample
