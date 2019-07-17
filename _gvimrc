@@ -1,0 +1,48 @@
+" 行表示
+set number
+
+" 折返し指定
+set wrap
+
+" 読み込み、ファイル生成、書き込み時にtxtファイルのファイルタイプをpfjaに設定
+au BufRead,BufNewFile,BufWrite *.txt set filetype=pfja
+
+" 間違ったときにビープ音の代わりに画面フラッシュで知らせる
+set visualbell
+
+" ノーマルモードで折り返していてもすぐ上下にカーソル移動できるようにする
+nnoremap j gj
+nnoremap k gk
+
+" ビジュアルモードにもjkのリマップ
+vnoremap j gj
+vnoremap k gk
+
+" カラースキーム（テーマ）を設定
+colorscheme shine
+
+"行番号の色を見やすいように背景をグレー、文字を黒い太字に設定
+hi LineNr gui=bold guifg=black guibg=LightGrey
+
+" windowサイズ（行数と列数）を設定
+set columns=82
+set lines=30
+
+" 行間をどれだけ空けるか
+set linespace=10
+
+" バッファや内部の文字コード
+set enc=utf-8
+
+" フォント設定
+set guifont=IPAゴシック:h14
+set guifontwide=IPA明朝:h14
+
+" gvimメニューの文字化け防止
+source $VIMRUNTIME/delmenu.vim
+set langmenu=ja_jp.utf-8
+source $VIMRUNTIME/menu.vim
+
+" directx rendering on 詳しいことは https://www.kaoriya.net/blog/2016/12/25/
+set renderoptions=type:directx,renmode:5
+
